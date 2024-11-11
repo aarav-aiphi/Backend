@@ -28,7 +28,7 @@ connectDB();
 // Middleware
 app.use(cookieParser());
 app.use(cors({
-  origin: ['http://localhost:1234','http://localhost:63647'],
+  origin: ['http://localhost:1234','https://aiazent.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
