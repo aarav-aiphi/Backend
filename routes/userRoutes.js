@@ -379,7 +379,7 @@ router.get(
 
     // Send token as a cookie
     res.cookie('token', token, {
-      httpOnly: false,
+      httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
       expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
