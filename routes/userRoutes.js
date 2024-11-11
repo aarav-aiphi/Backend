@@ -386,7 +386,7 @@ router.get(
     });
 
     // Redirect to the desired URL after successful login
-    res.redirect('http://localhost:1234/');
+    res.redirect('https://aiazent.vercel.app');
   }
 );
 
