@@ -20,7 +20,7 @@ const generateToken = (user, res, statusCode, message) => {
   const cookieOptions = {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production', // Ensure cookies are secure in production
-    sameSite:'None', // Adjust SameSite based on environment
+    sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax', // Adjust SameSite based on environment
     expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
   };
 
@@ -381,12 +381,12 @@ router.get(
     res.cookie('token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite:'None',
+      sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
       expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
     });
 
     // Redirect to the desired URL after successful login
-    res.redirect('https://aiazent.vercel.app');
+    res.redirect('http://localhost:1234/');
   }
 );
 
