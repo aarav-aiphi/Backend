@@ -1,7 +1,7 @@
 // server.js
 
 import express from 'express';
-import connectDB from './Config/db.js';
+import connectDB from './config/db.js';
 import cookieParser from 'cookie-parser';
 import agentRoutes from './routes/agentRoutes.js';
 import dotenv from 'dotenv';
