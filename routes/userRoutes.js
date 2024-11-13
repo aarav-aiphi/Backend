@@ -386,7 +386,7 @@ router.get(
     });
 
     // Redirect to the desired URL after successful login
-    res.redirect('http://localhost:1234/');
+    res.redirect('https://www.aiazent.ai');
   }
 );
 
@@ -405,7 +405,7 @@ router.post('/forgot-password', async (req, res) => {
     user.generatePasswordReset();
     await user.save();
 
-    const resetUrl = `http://localhost:1234/reset-password/${user.resetPasswordToken}`;
+    const resetUrl = `https://www.aiazent.ai/reset-password/${user.resetPasswordToken}`;
 
     // Send email
     const transporter = nodemailer.createTransport({

@@ -32,7 +32,7 @@ app.use(cookieParser());
 //   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 //   credentials: true,
 // }));
-const allowedOrigins = ['http://localhost:1234', 'https://aiazent.vercel.app'];
+const allowedOrigins = ['http://localhost:1234', 'https://aiazent.vercel.app','https://aiazent.ai','https://www.aiazent.ai'];
 
 const corsOptions = {
   origin: function (origin, callback) {
