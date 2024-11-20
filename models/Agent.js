@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const agentSchema = new mongoose.Schema({
-  name: { type: String, required: true, maxlength: 35 },
+  name: { type: String, required: true, maxlength: 35,unique:true },
   createdBy: { type: String, maxlength: 50 },
   websiteUrl: { type: String, required: true, maxlength: 100 },
   contactEmail: { type: String, maxlength: 50 },

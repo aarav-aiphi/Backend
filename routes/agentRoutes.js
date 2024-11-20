@@ -1,6 +1,7 @@
 import express from 'express';
 import cloudinary from '../config/cloudinary.js';
 import Agent from '../models/Agent.js';
+
 const router = express.Router();
 
 router.get('/all', async (req, res) => {
@@ -150,13 +151,14 @@ router.get('/similar/:id', async (req, res) => {
     const agentId = req.params.id;
 
     // Fetch the specific agent
-    const agent = await Agent.findById(agentId);
+    const agent = await Agent.findOne({ _id: agentId});
+
     if (!agent) {
-      return res.status(404).json({ message: 'Agent not found' });
+      return res.status(201).json({ message: 'Agent not found' });
     }
 
     // Fetch other agents to find similar matches
-    const otherAgents = await Agent.find({ _id: { $ne: agentId } });
+    const otherAgents = await Agent.find({ _id: { $ne: agentId },status: 'accepted' });
 
     // Calculate similarity scores
     const similarAgents = otherAgents.map(otherAgent => {
@@ -264,6 +266,7 @@ router.post('/create', async (req, res) => {
     res.status(500).json({ message: 'Failed to create agent', error: error.message });
   }
 });
+
 
 router.get('/:id', async (req, res) => {
   try {
