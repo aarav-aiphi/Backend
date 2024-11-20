@@ -15,10 +15,11 @@ router.get('/all', async (req, res) => {
 });
 router.get('/filters', async (req, res) => {
   try {
-    const categories = await Agent.distinct('category');
-    const industries = await Agent.distinct('industry');
-    const pricingModels = await Agent.distinct('price');
-    const accessModels = await Agent.distinct('accessModel');
+    const categories = await Agent.distinct('category', { status: 'accepted' });
+    const industries = await Agent.distinct('industry', { status: 'accepted' });
+    const pricingModels = await Agent.distinct('price', { status: 'accepted' });
+    const accessModels = await Agent.distinct('accessModel', { status: 'accepted' });
+    
 
     res.json({
       categories,
