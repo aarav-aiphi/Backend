@@ -271,7 +271,7 @@ router.post('/create', async (req, res) => {
 });
 router.post('/triedby/:id', async (req, res) => {
   try {
-    console.log("g");
+ 
     const agentId = req.params.id;
     const agent = await Agent.findById(agentId);
     if (!agent) {
