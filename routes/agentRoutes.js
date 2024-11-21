@@ -269,6 +269,22 @@ router.post('/create', async (req, res) => {
     res.status(500).json({ message: 'Failed to create agent', error: error.message });
   }
 });
+router.post('/triedby/:id', async (req, res) => {
+  try {
+    console.log("g");
+    const agentId = req.params.id;
+    const agent = await Agent.findById(agentId);
+    if (!agent) {
+      return res.status(404).json({ message: 'Agent not found' });
+    }
+    agent.triedBy += 1;
+    await agent.save();
+    res.status(200).json({ message: 'Tried By Count Updated Successfully', agent });
+  } catch (error) {
+    console.error('Error updating tried by count:', error);
+    res.status(500).json({ message: 'Failed to update tried by count', error: error.message });
+  }
+});
 
 
 router.get('/:id', async (req, res) => {
