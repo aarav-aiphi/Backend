@@ -95,8 +95,9 @@ router.get('/search', async (req, res) => {
 // Endpoint to get top-liked agent per category
 router.get('/top-likes-by-category', async (req, res) => {
   try {
-    // Aggregate agents by category, sort by likes, and get the top agent from each category
+    // Aggregate agents by category, filter by status, sort by likes, and get the top agent from each category
     const topAgents = await Agent.aggregate([
+      { $match: { status: "accepted" } }, // Filter agents with status 'accepted'
       { $sort: { likes: -1 } }, // Sort agents by likes in descending order
       {
         $group: {
@@ -113,6 +114,7 @@ router.get('/top-likes-by-category', async (req, res) => {
     res.status(500).json({ error: "Server error. Please try again later." });
   }
 });
+
 
 
 // Weights for each attribute in similarity calculation
