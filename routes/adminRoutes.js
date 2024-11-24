@@ -3,18 +3,20 @@ import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
 import Agent from '../models/Agent.js';
 import nodemailer from 'nodemailer';
+import cloudinary from '../config/cloudinary.js';
 import { parse } from 'csv-parse/sync';
 const router = express.Router();
 
 // Middleware to verify if the user is an admin
 const verifyAdmin = async (req, res, next) => {
+  
   const token = req.cookies.token;
  
 
   if (!token) {
     return res.status(401).json({ message: 'Authentication required' });
   }
-
+ 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const user = await User.findById(decoded.id);
@@ -28,6 +30,7 @@ const verifyAdmin = async (req, res, next) => {
 
     next();
   } catch (error) {
+    console.error('Token verification error:', error);
     return res.status(403).json({ message: 'Invalid token or token verification failed', error: error.message });
   }
 };
@@ -300,19 +303,102 @@ router.put('/agents/:id/status', verifyAdmin, async (req, res) => {
   }
 });
 // Update agent details (admin-only)
-router.put('/agents/:id/update', verifyAdmin, async (req, res) => {
-  const { id } = req.params;
-  const updateData = req.body;
-
+router.put('/update/:id',verifyAdmin, async (req, res) => {
   try {
-    const agent = await Agent.findByIdAndUpdate(id, updateData, { new: true });
-    if (!agent) return res.status(404).json({ message: 'Agent not found' });
+    const agentId = req.params.id;
+
+    // Fetch the existing agent
+    const agent = await Agent.findById(agentId);
+    if (!agent) {
+      return res.status(404).json({ message: 'Agent not found' });
+    }
+
+    const {
+      name,
+      createdBy,
+      websiteUrl,
+      accessModel,
+      pricingModel,
+      category,
+      industry,
+      price,
+      ownerEmail,
+      tagline,
+      description,
+      keyFeatures,
+      useCases,
+      tags,
+      videoUrl,
+      individualPlan,
+      enterprisePlan,
+      subscriptionModel,
+      refundPolicy,
+    } = req.body;
+
+    // Handle logo upload if provided
+    if (req.files && req.files.logo) {
+      if (agent.logo) {
+        const publicId = agent.logo.split('/').pop().split('.')[0];
+        await cloudinary.uploader.destroy(`agents/${publicId}`);
+      }
+      const logo = await cloudinary.uploader.upload(req.files.logo.tempFilePath, {
+        folder: 'agents',
+      });
+      agent.logo = logo.secure_url;
+    }
+
+    // Handle thumbnail upload if provided
+    if (req.files && req.files.thumbnail) {
+      if (agent.thumbnail) {
+        const publicId = agent.thumbnail.split('/').pop().split('.')[0];
+        await cloudinary.uploader.destroy(`agents/${publicId}`);
+      }
+      const thumbnail = await cloudinary.uploader.upload(req.files.thumbnail.tempFilePath, {
+        folder: 'agents',
+      });
+      agent.thumbnail = thumbnail.secure_url;
+    }
+
+    // Update other fields
+    if (name) agent.name = name;
+    if (createdBy) agent.createdBy = createdBy;
+    if (websiteUrl) agent.websiteUrl = websiteUrl;
+    if (accessModel) agent.accessModel = accessModel;
+    if (pricingModel) agent.pricingModel = pricingModel;
+    if (category) agent.category = category;
+    if (industry) agent.industry = industry;
+    if (price) agent.price = price;
+    if (ownerEmail) agent.ownerEmail = ownerEmail;
+    if (tagline) agent.tagline = tagline;
+    if (description) agent.description = description;
+
+    // Convert comma-separated strings or arrays to arrays
+    agent.keyFeatures = Array.isArray(keyFeatures)
+      ? keyFeatures
+      : keyFeatures?.split(',').map((item) => item.trim()) || [];
+    agent.useCases = Array.isArray(useCases)
+      ? useCases
+      : useCases?.split(',').map((item) => item.trim()) || [];
+    agent.tags = Array.isArray(tags)
+      ? tags
+      : tags?.split(',').map((item) => item.trim()) || [];
+
+    if (videoUrl) agent.videoUrl = videoUrl;
+    if (individualPlan) agent.individualPlan = individualPlan;
+    if (enterprisePlan) agent.enterprisePlan = enterprisePlan;
+    if (subscriptionModel) agent.subscriptionModel = subscriptionModel;
+    if (refundPolicy) agent.refundPolicy = refundPolicy;
+
+    // Save the updated agent
+    await agent.save();
 
     res.status(200).json({ message: 'Agent updated successfully', agent });
   } catch (error) {
-    res.status(500).json({ message: 'Failed to update agent details', error });
+    console.error('Error updating agent:', error);
+    res.status(500).json({ message: 'Failed to update agent', error: error.message });
   }
 });
+
 
 
 // Delete an agent (admin-only)

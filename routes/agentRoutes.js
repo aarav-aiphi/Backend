@@ -209,7 +209,7 @@ router.post('/create', async (req, res) => {
       individualPlan,
       enterprisePlan,
       subscriptionModel,
-      refundPolicy
+      refundPolicy,
     } = req.body;
 
     // Handle logo upload
