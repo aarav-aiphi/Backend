@@ -17,6 +17,10 @@ import newsletterRoutes from './routes/newsletter.js';
 import newsRoutes from './routes/news.js';
 import blogRoutes from './routes/blogRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
+import { SitemapStream, streamToPromise } from 'sitemap';
+import { Readable } from 'stream';
+import Agent from './models/Agent.js';
+
 const app = express();
 
 // Load environment variables
@@ -33,6 +37,8 @@ app.use(cookieParser());
 //   credentials: true,
 // }));
 const allowedOrigins = ['http://localhost:1234', 'https://aiazent.vercel.app','https://aiazent.ai','https://www.aiazent.ai'];
+
+
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -71,6 +77,72 @@ app.use(session({
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
+
+const BASE_URL = 'https://aiazent.ai';
+const staticUrls = [
+  { url: '/', changefreq: 'daily', priority: 1.0 },
+  { url: '/agentform', changefreq: 'monthly', priority: 0.8 },
+  { url: '/sponsorship', changefreq: 'monthly', priority: 0.8 },
+  { url: '/allagent', changefreq: 'monthly', priority: 0.8 },
+  { url: '/login', changefreq: 'monthly', priority: 0.8 },
+  { url: '/signup', changefreq: 'monthly', priority: 0.8 },
+  { url: '/admin-dashboard', changefreq: 'monthly', priority: 0.8 },
+  { url: '/map', changefreq: 'monthly', priority: 0.8 },
+  { url: '/news', changefreq: 'monthly', priority: 0.8 },
+  { url: '/blogs', changefreq: 'monthly', priority: 0.8 },
+  { url: '/add-blog', changefreq: 'monthly', priority: 0.8 },
+  { url: '/userdash', changefreq: 'monthly', priority: 0.8 },
+  { url: '/privacy', changefreq: 'yearly', priority: 0.5 },
+  { url: '/contact', changefreq: 'monthly', priority: 0.8 },
+  { url: '/community', changefreq: 'monthly', priority: 0.8 },
+  // Add other static routes as needed
+];
+// Function to get dynamic URLs for agents
+const getAgentUrls = async () => {
+  try {
+    const agents = await Agent.find({}, '_id'); // Fetch only the _id field
+    return agents.map(agent => ({
+      url: `/agent/${agent._id}`,
+      changefreq: 'weekly',
+      priority: 0.8,
+    }));
+  } catch (error) {
+    console.error('Error fetching agent URLs:', error);
+    return [];
+  }
+};
+// Sitemap Route
+app.get('/sitemap.xml', async (req, res) => {
+  try {
+    // Fetch dynamic URLs
+    const agentUrls = await getAgentUrls();
+
+
+    // Combine all URLs
+    const allUrls = [...staticUrls, ...agentUrls];
+
+    // Create a stream to write to
+    const sitemapStream = new SitemapStream({ hostname: BASE_URL });
+
+    // Convert the URLs to a Readable stream
+    const xmlString = await streamToPromise(Readable.from(allUrls).pipe(sitemapStream)).then(data => data.toString());
+
+    // Set the content type and send the XML
+    res.header('Content-Type', 'application/xml');
+    res.send(xmlString);
+  } catch (error) {
+    console.error('Error generating sitemap:', error);
+    res.status(500).end();
+  }
+});
+
+
+
+
+
+
+
 
 // Routes
 app.use('/api/agents', agentRoutes);
