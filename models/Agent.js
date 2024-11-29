@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { version } from 'mongoose';
 
 const agentSchema = new mongoose.Schema({
   name: { type: String, required: true, maxlength: 35,unique:true },
@@ -30,7 +30,7 @@ const agentSchema = new mongoose.Schema({
   reviewRatings: { type: Number, default: 0 },
   votesThisMonth: { type: Number, default: 0 },
   integrationSupport: { type: String, default: 'None' },
-  price: { type: String, required: true },
+  price: { type: String },
   gallery: { type: [String] },
   individualPlan: { type: String },
   enterprisePlan: { type: String },
@@ -44,7 +44,8 @@ const agentSchema = new mongoose.Schema({
   status: { type: String, enum: ['requested', 'accepted', 'rejected','onHold'], default: 'requested' },
   savedByCount: { type: Number, default: 0 },
   ownerEmail: { type: String},
-  
+  version: { type: Number, default: 0},
+  featured: { type: Boolean, default: false }
 
 });
 agentSchema.index({

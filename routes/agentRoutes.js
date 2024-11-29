@@ -229,7 +229,7 @@ router.post('/create', async (req, res) => {
       });
       thumbnailUrl = thumbnail.secure_url;
     }
-
+    const agentPrice = price ? price : 0;
     // Convert comma-separated string values to arrays if they exist
     const keyFeaturesArray = keyFeatures ? keyFeatures.split(',').map(item => item.trim()) : [];
     const useCasesArray = useCases ? useCases.split(',').map(item => item.trim()) : [];
@@ -244,7 +244,7 @@ router.post('/create', async (req, res) => {
       pricingModel,
       category,
       industry,
-      price,
+      price:agentPrice,
       ownerEmail,
       tagline,
       description,
