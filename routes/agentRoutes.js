@@ -246,7 +246,7 @@ router.post('/create', async (req, res) => {
       industry,
       price:agentPrice,
       ownerEmail,
-      tagline,
+      shortDescription:tagline,
       description,
       keyFeatures: keyFeaturesArray,
       useCases: useCasesArray,
