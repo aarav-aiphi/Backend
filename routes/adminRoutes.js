@@ -103,7 +103,7 @@ router.post('/bulk-upload-csv', verifyAdmin, async (req, res) => {
           }
 
           // Convert fields to appropriate data types with safe checks
-          const price = Number(trimmedRecord.price);
+       
           const likes = Number(trimmedRecord.likes) || 0;
           const triedBy = Number(trimmedRecord.triedBy) || 0;
           const reviewRatings = Number(trimmedRecord.reviewRatings) || 0;
@@ -113,10 +113,10 @@ router.post('/bulk-upload-csv', verifyAdmin, async (req, res) => {
           const freeTrial = typeof trimmedRecord.freeTrial === 'string' ? trimmedRecord.freeTrial.toLowerCase() === 'true' : false;
 
           // Basic validation: Check required fields and data types
-          const requiredFields = ['name', 'websiteUrl', 'accessModel', 'pricingModel', 'category', 'industry', 'price'];
+          const requiredFields = ['name', 'websiteUrl', 'accessModel', 'pricingModel', 'category', 'industry'];
           const hasAllRequiredFields = requiredFields.every(field => trimmedRecord[field]);
 
-          const isPriceValid = !isNaN(price);
+       
           const isLikesValid = !isNaN(likes);
           const isTriedByValid = !isNaN(triedBy);
           const isReviewRatingsValid = !isNaN(reviewRatings);
@@ -130,7 +130,7 @@ router.post('/bulk-upload-csv', verifyAdmin, async (req, res) => {
        
           if (
               hasAllRequiredFields &&
-              isPriceValid &&
+             
               isLikesValid &&
               isTriedByValid &&
               isReviewRatingsValid &&
@@ -185,7 +185,7 @@ router.post('/bulk-upload-csv', verifyAdmin, async (req, res) => {
               const reasons = [];
 
               if (!hasAllRequiredFields) reasons.push('Missing required fields.');
-              if (!isPriceValid) reasons.push('Price must be a valid number.');
+          
               if (!isLikesValid) reasons.push('Likes must be a valid number.');
               if (!isTriedByValid) reasons.push('TriedBy must be a valid number.');
               if (!isReviewRatingsValid) reasons.push('ReviewRatings must be a valid number.');
