@@ -220,6 +220,7 @@ router.post('/wishlist/:agentId', verifyToken, async (req, res) => {
       // If in wishlist, remove it and decrement savedByCount
       user.wishlist = user.wishlist.filter(id => id && !id.equals(agentId));
       agent.savedByCount = Math.max(0, agent.savedByCount - 1);
+      agent.calculatePopularity(); // Recalculate popularity
       await agent.save();
       await user.save();
       res.status(201).json({ message: 'Agent removed from wishlist', agent});
@@ -227,6 +228,7 @@ router.post('/wishlist/:agentId', verifyToken, async (req, res) => {
       // If not in wishlist, add it and increment savedByCount
       user.wishlist.push(agentId);
       agent.savedByCount += 1;
+      agent.calculatePopularity(); // Recalculate popularity
       await agent.save();
       await user.save();
       res.status(200).json({ message: 'Agent added to wishlist', agent});
@@ -258,6 +260,7 @@ router.post('/like/:agentId', verifyToken, async (req, res) => {
       // If in wishlist, remove it and decrement savedByCount
       user.likedAgents = user.likedAgents.filter(id => id && !id.equals(agentId));
       agent.likes = Math.max(0, agent.likes - 1);
+      agent.calculatePopularity(); // Recalculate popularity
       await agent.save();
       await user.save();
       res.status(201).json({ message: 'Like Removed', agent});
@@ -265,7 +268,8 @@ router.post('/like/:agentId', verifyToken, async (req, res) => {
       // If not in wishlist, add it and increment savedByCount
       user.likedAgents.push(agentId);
       agent.likes += 1;
-      await agent.save();
+      agent.calculatePopularity(); // Recalculate popularity
+await agent.save();
       await user.save();
       res.status(200).json({ message: 'Like Added', agent});
     }

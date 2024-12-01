@@ -14,6 +14,8 @@ const agentSchema = new mongoose.Schema({
   shortDescription:{type:String},
   keyFeatures: { type: [String] },
   useCases: { type: [String]},    
+  popularityScore: { type: Number, default: 0 },
+  // 
   //  these usecases should be name agent usecases
   // use role also included in the agent schema
   //  usecases must be in database(Below Search function in frontend)
@@ -69,6 +71,16 @@ agentSchema.index({
     industry: 5
   }
 });
+
+agentSchema.methods.calculatePopularity = function () {
+  const { triedBy, likes, savedByCount } = this; // Corrected variable name
+  // Define your weights here
+  const triedByWeight = 1;
+  const likesWeight = 2;
+  const savedByCountWeight = 2;
+  
+  this.popularityScore = (triedBy * triedByWeight) + (likes * likesWeight) + (savedByCount * savedByCountWeight);
+};
 
 
 const Agent = mongoose.model('Agent', agentSchema);

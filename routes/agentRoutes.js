@@ -19,13 +19,14 @@ router.get('/filters', async (req, res) => {
     const industries = await Agent.distinct('industry', { status: 'accepted' });
     const pricingModels = await Agent.distinct('price', { status: 'accepted' });
     const accessModels = await Agent.distinct('accessModel', { status: 'accepted' });
-    
-
+  
+//  
     res.json({
       categories,
       industries,
       pricingModels,
       accessModels,
+      popularity
     });
   } catch (error) {
     console.error('Error fetching filter options:', error);
@@ -278,6 +279,7 @@ router.post('/triedby/:id', async (req, res) => {
       return res.status(404).json({ message: 'Agent not found' });
     }
     agent.triedBy += 1;
+    agent.calculatePopularity(); // Recalculate popularity
     await agent.save();
     res.status(200).json({ message: 'Tried By Count Updated Successfully', agent });
   } catch (error) {
