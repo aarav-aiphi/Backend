@@ -20,6 +20,8 @@ import contactRoutes from './routes/contactRoutes.js';
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { Readable } from 'stream';
 import Agent from './models/Agent.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
 
@@ -31,6 +33,9 @@ connectDB();
 
 // Middleware
 app.use(cookieParser());
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 // app.use(cors({
 //   origin: ['http://localhost:1234','https://aiazent.vercel.app'],
 //   methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -59,6 +64,9 @@ app.options('*', cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
+
 app.use(
   fileUpload({
     useTempFiles: true,
@@ -87,7 +95,6 @@ const staticUrls = [
   { url: '/allagent', changefreq: 'monthly', priority: 0.8 },
   { url: '/login', changefreq: 'monthly', priority: 0.8 },
   { url: '/signup', changefreq: 'monthly', priority: 0.8 },
-  { url: '/admin-dashboard', changefreq: 'monthly', priority: 0.8 },
   { url: '/map', changefreq: 'monthly', priority: 0.8 },
   { url: '/news', changefreq: 'monthly', priority: 0.8 },
   { url: '/blogs', changefreq: 'monthly', priority: 0.8 },
