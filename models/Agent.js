@@ -81,7 +81,10 @@ agentSchema.methods.calculatePopularity = function () {
   
   this.popularityScore = (triedBy * triedByWeight) + (likes * likesWeight) + (savedByCount * savedByCountWeight);
 };
-
+agentSchema.pre('save', function (next) {
+  this.calculatePopularity();
+  next();
+});
 
 const Agent = mongoose.model('Agent', agentSchema);
 
