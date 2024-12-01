@@ -19,14 +19,11 @@ router.get('/filters', async (req, res) => {
     const industries = await Agent.distinct('industry', { status: 'accepted' });
     const pricingModels = await Agent.distinct('price', { status: 'accepted' });
     const accessModels = await Agent.distinct('accessModel', { status: 'accepted' });
-  
-//  
     res.json({
       categories,
       industries,
       pricingModels,
-      accessModels,
-      popularity
+      accessModels
     });
   } catch (error) {
     console.error('Error fetching filter options:', error);
