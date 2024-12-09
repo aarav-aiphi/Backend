@@ -66,7 +66,7 @@ router.delete('/agents/:id',verifyAdmin,async(req,res)=>{
     res.status(500).json({message:'Failed to delete agent',error:error.message});
   }
 })
-router.post('/bulk-upload-csv',verifyAdmin, async (req, res) => {
+router.post('/bulk-upload-csv', async (req, res) => {
   try {
       const { csv } = req.body;
 
@@ -150,10 +150,10 @@ router.post('/bulk-upload-csv',verifyAdmin, async (req, res) => {
                   tagline: trimmedRecord.tagline || '',
                   description: trimmedRecord.description || '',
                   shortDescription: trimmedRecord.shortDescription || '',
-                  keyFeatures: trimmedRecord.keyFeatures ? trimmedRecord.keyFeatures.split('|').map(f => f.trim()) : [],
-                  useCases: trimmedRecord.useCases ? trimmedRecord.useCases.split('|').map(u => u.trim()) : [],
+                  keyFeatures: trimmedRecord.keyFeatures ? trimmedRecord.keyFeatures.split(',').map(f => f.trim()) : [],
+                  useCases: trimmedRecord.useCases ? trimmedRecord.useCases.split(',').map(u => u.trim()) : [],
                   useRole: trimmedRecord.useRole || '',
-                  tags: trimmedRecord.tags ? trimmedRecord.tags.split('|').map(t => t.trim()) : [],
+                  tags: trimmedRecord.tags ? trimmedRecord.tags.split(',').map(t => t.trim()) : [],
                   logo: trimmedRecord.logo || '',
                   thumbnail: trimmedRecord.thumbnail || '',
                   videoUrl: trimmedRecord.videoUrl || '',
