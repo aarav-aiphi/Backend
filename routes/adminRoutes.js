@@ -66,7 +66,7 @@ router.delete('/agents/:id',verifyAdmin,async(req,res)=>{
     res.status(500).json({message:'Failed to delete agent',error:error.message});
   }
 })
-router.post('/bulk-upload-csv', verifyAdmin, async (req, res) => {
+router.post('/bulk-upload-csv',verifyAdmin, async (req, res) => {
   try {
       const { csv } = req.body;
 
@@ -163,7 +163,6 @@ router.post('/bulk-upload-csv', verifyAdmin, async (req, res) => {
                   reviewRatings: reviewRatings,
                   votesThisMonth: votesThisMonth,
                   integrationSupport: trimmedRecord.integrationSupport || 'None',
-                  price: price,
                   gallery: trimmedRecord.gallery ? trimmedRecord.gallery.split('|').map(g => g.trim()) : [],
                   individualPlan: trimmedRecord.individualPlan || '',
                   enterprisePlan: trimmedRecord.enterprisePlan || '',
