@@ -1,26 +1,19 @@
 import mongoose, { version } from 'mongoose';
 
 const agentSchema = new mongoose.Schema({
-  name: { type: String, required: true, maxlength: 35,unique:true },
-  createdBy: { type: String, maxlength: 50 },
-  websiteUrl: { type: String, required: true, maxlength: 100 },
-  contactEmail: { type: String, maxlength: 50 },
+  name: { type: String, required: true,unique:true },
+  createdBy: { type: String},
+  websiteUrl: { type: String, required: true},
+  ownerEmail: { type: String},
   accessModel: { type: String, required: true, enum: ['Open Source', 'Closed Source', 'API'] },
   pricingModel: { type: String, required: true, enum: ['Free', 'Freemium', 'Paid'] },
   category: { type: String, required: true },
   industry: { type: String, required: true },
   tagline: { type: String },
   description: { type: String},
-  shortDescription:{type:String},
   keyFeatures: { type: [String] },
   useCases: { type: [String]},    
   popularityScore: { type: Number, default: 0 },
-  // 
-  //  these usecases should be name agent usecases
-  // use role also included in the agent schema
-  //  usecases must be in database(Below Search function in frontend)
-  //   Short useCases .........String with prefix and suffix combine with usecases
-  // User telling something (user role  eg... i am accountant) and we have to predict the usecases according to that
   useRole:{type:String},
   tags: { type: [String]},
   logo: { type: String },
@@ -31,21 +24,13 @@ const agentSchema = new mongoose.Schema({
   triedBy: { type: Number, default: 0 },
   reviewRatings: { type: Number, default: 0 },
   votesThisMonth: { type: Number, default: 0 },
-  integrationSupport: { type: String, default: 'None' },
   price: { type: String },
   gallery: { type: [String] },
-  individualPlan: { type: String },
-  enterprisePlan: { type: String },
   freeTrial: { type: Boolean, default: false },
   subscriptionModel: { type: String },
-  refundPolicy: { type: String },
-  companyResources: {
-    website: { type: String },
-    otherResources: { type: [String] }
-  },
   status: { type: String, enum: ['requested', 'accepted', 'rejected','onHold'], default: 'requested' },
   savedByCount: { type: Number, default: 0 },
-  ownerEmail: { type: String},
+
   version: { type: Number, default: 0},
   featured: { type: Boolean, default: false }
 
@@ -53,7 +38,7 @@ const agentSchema = new mongoose.Schema({
 agentSchema.index({
   name: 'text',
   description: 'text',
-  shortDescription: 'text',
+  tagline: 'text',
   tags: 'text',
   keyFeatures: 'text',
   useCases: 'text',
@@ -62,13 +47,13 @@ agentSchema.index({
 }, {
   weights: {
     name: 10,                 // Higher weight for name
-    shortDescription: 7,      // High weight for short description
-    tags: 10,                  // High weight for tags
+    tagline: 8,      // High weight for short description
+    tags: 7,                  // High weight for tags
     description: 2,           // Lower weight for description
-    keyFeatures: 4,
-    useCases: 4,
-    category: 5,
-    industry: 5
+    keyFeatures: 5,
+    useCases: 5,
+    category: 3,
+    industry: 3
   }
 });
 

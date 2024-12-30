@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URI, {
 const uploadAgents = async () => {
   try {
     // Read the agentschema.json file (you already have this)
-    const data = fs.readFileSync('./agents.json', 'utf-8');
+    const data = fs.readFileSync('./agentsdata.json', 'utf-8');
     const agents = JSON.parse(data);
 
     // Insert agents into the database

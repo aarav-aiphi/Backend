@@ -17,6 +17,11 @@ const userSchema = new mongoose.Schema({
 
 
   },
+  role:{
+    type:'String',
+    enum:['user','admin','superadmin'],
+    default:'user'
+  },
   socialLogins: {
     google: { type: String },
     facebook: { type: String },
@@ -26,7 +31,8 @@ const userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Agent'
   }],
-  twoFactorAuth: { type: Boolean, default: false },
+  twoFactorCode: { type: String },
+  twoFactorCodeExpires: { type: Date },
   courses: [{ type: String }],
   reviews: [{
     type: mongoose.Schema.Types.ObjectId,

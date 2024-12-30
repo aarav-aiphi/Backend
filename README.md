@@ -56,7 +56,7 @@ NODE_ENV=development
 
    npm start
 
-The server will start on https://backend-1-sval.onrender.com by default.
+The server will start on http://localhost:5000 by default.
 
 ## API Routes
 

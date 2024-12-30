@@ -129,101 +129,24 @@ router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    // Find user by email
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({ message: 'Invalid email or password' });
     }
-
+    console.log(password,user.password);
     // Check if the password is correct
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({ message: 'Invalid email or password' });
     }
 
-    if (user.isAdmin) {
-      // Generate OTP
-      const otp = crypto.randomInt(100000, 999999).toString(); // 6-digit OTP
-
-      // Set OTP and expiration (e.g., 10 minutes)
-      user.twoFactorCode = otp;
-      user.twoFactorCodeExpires = Date.now() + 10 * 60 * 1000; // 10 minutes
-      await user.save();
-      const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false, // use false for STARTTLS; true for SSL on port 465
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS,
-        }
-      });
-      // Send OTP via email
-      const mailOptions = {
-        to: user.email,
-        from: process.env.EMAIL_USER,
-        subject: 'Your 2FA Verification Code',
-        text: `Your verification code is ${otp}. It will expire in 10 minutes.`,
-        html: `<p>Your verification code is <strong>${otp}</strong>. It will expire in 10 minutes.</p>`,
-      };
-
-      transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-          console.log('Error:', error);
-          return res.status(500).json({ message: 'Error sending OTP email' });
-        } else {
-          console.log('Email sent: ', info.response);
-          return res.status(200).json({ message: 'OTP sent to your email.', userId: user._id });
-        }
-      });
-
-    } else {
-      // Not admin, proceed as usual
-      // Generate token and set it in cookies
-      generateToken(user, res, 200, 'Login successful');
-    }
+    // Generate token and set it in cookies
+    generateToken(user, res, 200, 'Login successful');
   } catch (error) {
     console.error('Error logging in user:', error);
     res.status(500).json({ message: 'Error logging in user', error });
   }
 });
-
-// VERIFY OTP Route
-router.post('/verify-otp', async (req, res) => {
-  const { userId, otp } = req.body;
-  try {
-    // Find user by ID
-    const user = await User.findById(userId);
-    if (!user || !user.twoFactorCode || !user.twoFactorCodeExpires) {
-      return res.status(400).json({ message: 'Invalid request' });
-    }
-
-    // Check if OTP is expired
-    if (user.twoFactorCodeExpires < Date.now()) {
-      return res.status(400).json({ message: 'OTP has expired' });
-    }
-
-    // Verify OTP
-    if (user.twoFactorCode !== otp) {
-      return res.status(400).json({ message: 'Invalid OTP' });
-    }
-
-    // Clear OTP fields
-    user.twoFactorCode = undefined;
-    user.twoFactorCodeExpires = undefined;
-    await user.save();
-
-    // Generate token and set it in cookies
-    generateToken(user, res, 200, 'Login successful');
-  } catch (error) {
-    console.error('Error verifying OTP:', error);
-    res.status(500).json({ message: 'Error verifying OTP', error });
-  }
-});
-
-
-
-
 
 // LOGOUT Route
 router.post('/logout', (req, res) => {

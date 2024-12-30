@@ -1,0 +1,419 @@
+[
+    {
+      "_id": "668b5c7e9c7c57ae0bb162e1",
+      "name": "AgentGPT",
+      "createdBy": "Reworkd",
+      "website": "https://agentgpt.reworkd.ai/",
+      "access": "Open Source",
+      "pricingModel": "Freemium",
+      "category": "AI Agents Platform",
+      "industry": "Technology",
+      "shortDescription": "An autonomous AI agent platform for creating and deploying customizable AI agents in the browser.",
+      "longDescription": "AgentGPT is an innovative AI platform that allows users to create and deploy autonomous AI agents directly in their web browsers. It leverages advanced language models like GPT-4 to enable these agents to understand objectives, implement strategies, and deliver results with minimal human intervention. Users can assign names and goals to their AI agents, which then work independently to accomplish the given tasks",
+      "keyFeatures": [
+        "Autonomous AI agent creation and deployment, Real-time text generation using GPT-4, Customizable applications, Secure authentication system, Advanced memory management using Weaviate vector database"
+      ],
+      "useCases": [
+        "Automating routine tasks",
+        "Creating personalized chatbots for customer service",
+        "Generating comprehensive reports on specific topics",
+        "Planning detailed travel itineraries",
+        "Developing study plans for academic subjects"
+      ],
+      "tags": "AI, autonomous agents, natural language processing, task automation, customizable AI",
+      "logo": "https://storage.googleapis.com/aiagents_1/agent-logos/1720409213533-3948f31515c8f231.png",
+      "logoFileName": "1720409213533-3948f31515c8f231.png",
+      "image": "https://storage.googleapis.com/aiagents_1/agent-images/1720409213838-9ddbb418fa5e0149.png",
+      "imageFileName": "1720409213838-9ddbb418fa5e0149.png",
+      "video": "https://www.youtube.com/watch?v=_zF7PzoBtdM",
+      "upvotes": 1,
+      "upvoters": [
+        "826b179df9812bec2ffd0b41fd9bf367"
+      ],
+      "approved": true,
+      "createdAt": "2024-07-08T03:26:54.038Z",
+      "slug": "agentgpt",
+      "__v": 1,
+      "featured": false
+    },
+    {
+      "_id": "669875aba5fbba310e069e39",
+      "name": "Voiceflow",
+      "createdBy": "Voiceflow",
+      "website": "https://www.voiceflow.com/",
+      "access": "Closed Source",
+      "pricingModel": "Paid",
+      "category": "AI Agents Platform",
+      "industry": "Technology",
+      "shortDescription": "A collaborative platform for designing, developing, and launching AI Agents",
+      "longDescription": "Voiceflow is an enterprise-grade platform that enables teams to build, test, and deploy conversational AI agents at scale. It offers a robust developer toolkit for creating customized end-user experiences, integrating with existing tech stacks, and automating customer support. Voiceflow's AI agents can handle complex queries, reduce support ticket costs, and improve customer satisfaction. The platform supports a global community of 250,000+ users and provides resources for learning and collaboration",
+      "keyFeatures": [
+        "Developer platform for custom integrations, Reusable integrations with various services, Enterprise-grade security, Collaborative design tools, Analytics and performance tracking"
+      ],
+      "useCases": [
+        "Automating customer support tickets",
+        "Personalizing product recommendations",
+        "Streamlining sales processes",
+        "Enhancing user interactions",
+        "Providing location-based services"
+      ],
+      "tags": "AI Agents, chatbot, conversational AI, customer support, enterprise solutions, automation",
+      "logo": "https://storage.googleapis.com/aiagents_1/agent-logos/1721267627087-1f79a971b33550a3.png",
+      "logoFileName": "1721267627087-1f79a971b33550a3.png",
+      "image": "https://storage.googleapis.com/aiagents_1/agent-images/1721267627531-296a250f713703a5.png",
+      "imageFileName": "1721267627531-296a250f713703a5.png",
+      "video": "https://www.youtube.com/watch?v=xoJL4tYGcWs",
+      "upvotes": 3,
+      "upvoters": [
+        "826b179df9812bec2ffd0b41fd9bf367",
+        "d0eb6ed033e02900a8c6180d1ab034e4",
+        "862b2ca0e6ec22a36e65505121e53b23"
+      ],
+      "approved": true,
+      "createdAt": "2024-07-18T01:53:47.763Z",
+      "slug": "voiceflow",
+      "__v": 1,
+      "featured": false
+    },
+    {
+      "_id": "66987f43101c19efe6aea314",
+      "name": "Relevance AI",
+      "createdBy": "Relevance AI",
+      "website": "https://relevanceai.com/",
+      "access": "Closed Source",
+      "pricingModel": "Freemium",
+      "category": "AI Agents Platform",
+      "industry": "Technology",
+      "shortDescription": "An AI workforce platform empowering businesses with customizable AI agents and tools.",
+      "longDescription": "Relevance AI is a comprehensive platform for building and deploying AI workforces across various business operations. It allows companies to create custom AI agents equipped with specific tools and skills tailored to their needs. The platform supports multiple AI models, offers a tool builder for creating integrations and automations, and provides a scalable infrastructure for deploying multi-agent systems. Relevance AI aims to streamline repetitive tasks and enhance productivity across different departments.",
+      "keyFeatures": [
+        "Customizable AI agents, Multi-model support, Tool builder for integrations, Multi-agent system deployment, SOC 2 Type II compliant"
+      ],
+      "useCases": [
+        "Sales automation",
+        "Customer support enhancement",
+        "Market research analysis",
+        "Marketing campaign optimization",
+        "Data entry and report generation"
+      ],
+      "tags": "AI workforce, Business automation, Natural language processing, Multi-agent systems, Enterprise AI",
+      "logo": "https://storage.googleapis.com/aiagents_1/agent-logos/1721270083030-3eb4b79c4afd4819.jpg",
+      "logoFileName": "1721270083030-3eb4b79c4afd4819.jpg",
+      "image": "https://storage.googleapis.com/aiagents_1/agent-images/1721270083313-21697123f55015cc.png",
+      "imageFileName": "1721270083313-21697123f55015cc.png",
+      "video": "https://www.youtube.com/watch?v=d5pgG0rLve8",
+      "upvotes": 3,
+      "upvoters": [
+        "826b179df9812bec2ffd0b41fd9bf367",
+        "c0f1b6fa5ff80ddea820eb08960b36a2",
+        "862b2ca0e6ec22a36e65505121e53b23"
+      ],
+      "approved": true,
+      "createdAt": "2024-07-18T02:34:43.545Z",
+      "slug": "relevance-ai",
+      "__v": 2,
+      "featured": false
+    },
+    {
+      "_id": "6698833f3252e2ca6d0269c5",
+      "name": "Hebbia AI",
+      "createdBy": "George Sivulka",
+      "website": "https://www.hebbia.ai/",
+      "access": "Closed Source",
+      "pricingModel": "Paid",
+      "category": "AI Agents Platform",
+      "industry": "Finance",
+      "shortDescription": "Enterprise AI platform transforming knowledge work through intelligent data analysis and task automa",
+      "longDescription": "Hebbia AI is an advanced enterprise AI platform designed for knowledge workers in finance, law, and Fortune 500 companies. It utilizes AI agents to analyze large datasets, automate complex workflows, and provide actionable insights with full transparency. Hebbia's main product, Matrix, allows users to build AI agents that complete end-to-end tasks efficiently, ingesting structured and unstructured data across multiple formats and delivering answers with citations in a familiar spreadsheet-like interface",
+      "keyFeatures": [
+        "AI-powered data analysis,",
+        "Infinite effective context window,",
+        "Multi-step workflow execution,",
+        "Total transparency,",
+        "Enterprise-grade security"
+      ],
+      "useCases": [
+        "Financial due diligence,",
+        "Legal contract analysis,",
+        "Market research synthesis,",
+        "Portfolio monitoring,",
+        "Corporate development support"
+      ],
+      "tags": "Enterprise AI, Knowledge work, Data analysis, Task automation, AI agents",
+      "logo": "https://storage.googleapis.com/aiagents_1/agent-logos/1721271102550-39af1b99fd21105b.png",
+      "logoFileName": "1721271102550-39af1b99fd21105b.png",
+      "video": "https://vimeo.com/919739255",
+      "upvotes": 1,
+      "upvoters": [
+        "826b179df9812bec2ffd0b41fd9bf367"
+      ],
+      "approved": true,
+      "createdAt": "2024-07-18T02:51:43.223Z",
+      "slug": "hebbia-ai",
+      "__v": 1,
+      "featured": false,
+      "image": null,
+      "linkedinUrl": "https://www.linkedin.com/company/hebbia/"
+    },
+    {
+      "_id": "669d98a2f94a4fc94ce5f348",
+      "name": "NexusGPT",
+      "createdBy": "SNIKPIC SRL",
+      "website": "https://gpt.nexus/",
+      "access": "Closed Source",
+      "pricingModel": "Freemium",
+      "category": "AI Agents Platform",
+      "industry": "Technology",
+      "shortDescription": "A no-code platform for building and integrating custom AI agents to automate workflows.",
+      "longDescription": "NexusGPT is an advanced AI-powered platform that enables users to create, customize, and deploy autonomous AI agents without coding. It offers a marketplace of pre-built agents and tools, allows integration of custom knowledge, and supports deployment across various platforms like websites, WhatsApp, Slack, and Teams. NexusGPT leverages powerful language models to automate complex tasks, streamline workflows, and enhance business processes in areas such as customer support, sales, research, and marketing.",
+      "keyFeatures": [
+        "No-code AI agent creation, Extensive tool marketplace, Custom knowledge integration, Multi-platform deployment, Autonomous task planning and execution"
+      ],
+      "useCases": [
+        "Automated customer support",
+        "Sales process automation",
+        "Research and data analysis",
+        "Marketing campaign management",
+        "Business process optimization"
+      ],
+      "tags": "AI automation, No-code platform, Workflow optimization, Custom AI agents, Business productivity",
+      "logo": "https://storage.googleapis.com/aiagents_1/agent-logos/1721604258181-1f168f1ff6d3a129.jpg",
+      "logoFileName": "1721604258181-1f168f1ff6d3a129.jpg",
+      "image": "https://storage.googleapis.com/aiagents_1/agent-images/1721604258518-7367f732b0576a7b.png",
+      "imageFileName": "1721604258518-7367f732b0576a7b.png",
+      "video": "https://www.youtube.com/watch?v=nkVcZK4aiFQ",
+      "upvotes": 5,
+      "upvoters": [
+        "826b179df9812bec2ffd0b41fd9bf367",
+        "293be37b7810475da867c8d72ca3c42f",
+        "02971dd6062cb8d8e7b75d2d4e4366bd",
+        "cdfc42d459a843afe75af52cc7fb20b0",
+        "d0eb6ed033e02900a8c6180d1ab034e4"
+      ],
+      "approved": true,
+      "createdAt": "2024-07-21T23:24:18.731Z",
+      "slug": "nexusgpt",
+      "__v": 4,
+      "featured": false
+    },
+    {
+      "_id": "669dcaf0069ea42795da90cb",
+      "name": "Wordware",
+      "createdBy": "Robert Chandler",
+      "website": "https://www.wordware.ai/",
+      "access": "API",
+      "pricingModel": "Freemium",
+      "category": "AI Agents Platform",
+      "industry": "Technology",
+      "shortDescription": "AI toolkit that helps cross-functional teams build reliable high quality agents ",
+      "longDescription": "Wordware is an innovative AI toolkit that empowers teams to build reliable, high-quality AI agents through rapid iteration. It combines a user-friendly interface with advanced technical capabilities, allowing both technical and non-technical users to collaborate on creating AI applications. Wordware's platform features a Notion-like interface, supports multiple LLM providers, and offers one-click API deployment, making it a powerful tool for AI development and deployment.",
+      "keyFeatures": [
+        "Web-hosted IDE, Natural language programming, Multimodal support, Version control, One-click API deployment"
+      ],
+      "useCases": [
+        "Building customer service chatbots",
+        "Developing healthcare AI assistants",
+        "Creating financial analysis tools",
+        "Automating content generation",
+        "Designing personalized recommendation systems"
+      ],
+      "tags": "AI development, Natural language processing, Collaborative tools, Prompt engineering, Machine learning",
+      "logo": "https://storage.googleapis.com/aiagents_1/agent-logos/1721617135475-478c4975f12af82d.jpg",
+      "logoFileName": "1721617135475-478c4975f12af82d.jpg",
+      "image": "https://storage.googleapis.com/aiagents_1/agent-images/1721617135805-865b065a9206b00d.png",
+      "imageFileName": "1721617135805-865b065a9206b00d.png",
+      "video": "https://www.youtube.com/watch?v=Xt0CkylsWgE",
+      "upvotes": 7,
+      "upvoters": [
+        "826b179df9812bec2ffd0b41fd9bf367",
+        "c939a191f0f5928272de9930e293e4dd",
+        "94c56037ed5c9ddb9b6c880f98fabf28",
+        "c0f1b6fa5ff80ddea820eb08960b36a2",
+        "793f931836d41b5fc525b2817b669555",
+        "7c12f634b49d830b3656e45aa1035ec1",
+        "d0eb6ed033e02900a8c6180d1ab034e4"
+      ],
+      "approved": true,
+      "createdAt": "2024-07-22T02:58:56.027Z",
+      "slug": "wordware",
+      "__v": 6,
+      "featured": false
+    },
+    {
+      "_id": "669dd16d069ea42795da90e4",
+      "name": "Anon",
+      "createdBy": "​Daniel Mason",
+      "website": "https://www.anon.com/",
+      "access": "API",
+      "pricingModel": "Freemium",
+      "category": "AI Agents Platform",
+      "industry": "Technology",
+      "shortDescription": "Authentication layer enabling AI agents to interact securely with various online services.",
+      "longDescription": "Anon is a developer platform that provides tools and infrastructure for building user-permissioned integrations across the internet. It allows developers to create secure connections between AI agents and user accounts on various websites and services, even those without traditional APIs. Anon handles complex authentication processes, including SSO, OAuth, and 2FA, while maintaining user privacy and security",
+      "keyFeatures": [
+        "User-permissioned integrations, Zero-trust architecture, Support for multiple authentication methods, Expanding set of popular integrations, Cross-platform support (mobile, web, desktop)"
+      ],
+      "useCases": [
+        "Booking flights via AI agents, Automating social media communications, Enabling AI interactions through messaging channels, Secure e-commerce transactions, Aggregating messages from various platforms"
+      ],
+      "tags": "AI integration, Authentication, Developer tools, Automation, Security",
+      "logo": "https://storage.googleapis.com/aiagents_1/agent-logos/1721618796716-913e8ed19a8de3b5.jpg",
+      "logoFileName": "1721618796716-913e8ed19a8de3b5.jpg",
+      "image": "https://storage.googleapis.com/aiagents_1/agent-images/1721618796957-66a0818c49b88d9b.png",
+      "imageFileName": "1721618796957-66a0818c49b88d9b.png",
+      "upvotes": 1,
+      "upvoters": [
+        "826b179df9812bec2ffd0b41fd9bf367"
+      ],
+      "approved": true,
+      "createdAt": "2024-07-22T03:26:37.172Z",
+      "slug": "anon",
+      "__v": 1,
+      "featured": false
+    },
+    {
+      "_id": "66a07e91b4b8f84605a3bce6",
+      "name": "Beam AI",
+      "createdBy": "Jonas Diezun",
+      "website": "https://beam.ai/platform",
+      "access": "API",
+      "pricingModel": "Freemium",
+      "category": "AI Agents Platform",
+      "industry": "Technology",
+      "shortDescription": "Platform for agentic process automation",
+      "longDescription": "Beam AI Agents are intelligent, autonomous software entities designed to automate and optimize various business processes. The platform offers a comprehensive suite of tools that integrate seamlessly with existing systems, enabling organizations to transition smoothly into an AI-native future. These agents are capable of executing complex tasks, learning continuously, and adapting to specific operational procedures, thus enhancing efficiency and reducing human error. Beam AI Agents are ideal for enterprises looking to streamline operations and drive innovation.",
+      "keyFeatures": [
+        "Autonomous task execution,\r\nContinuous learning and improvement,\r\nSeamless integration with existing tools,\r\nCustomizable workflows and triggers,\r\nCentralized oversight and management"
+      ],
+      "useCases": [
+        "Customer support automation\r\nPayroll reconciliation\r\nDocument processing\r\nInsurance claims management\r\nInvoice processing"
+      ],
+      "logo": "https://storage.googleapis.com/aiagents_1/agent-logos/1721794192948-61859f56fc844f5e.png",
+      "logoFileName": "1721794192948-61859f56fc844f5e.png",
+      "image": "https://storage.googleapis.com/aiagents_1/agent-images/1721794193297-c9da5b8edc46c980.png",
+      "imageFileName": "1721794193297-c9da5b8edc46c980.png",
+      "upvotes": 26,
+      "upvoters": [
+        "826b179df9812bec2ffd0b41fd9bf367",
+        "b01ba0fa9343f77b6fa77194918385dd",
+        "362a05086ac81bff3382fee92de0aac1",
+        "862b2ca0e6ec22a36e65505121e53b23",
+        "320743405414675eec9163a2098f8a1d",
+        "eb3fdbc63e519514f16d63b52bd31c4b",
+        "ac260f02c97880dabe96ff31f975fceb",
+        "9ed628bb13b1efe69db152e5e27f3c34",
+        "86788ad54d5b21eb529a313ba1d1c4fd",
+        "d0444281888ab8c1340dd342ac6971eb",
+        "7c12f634b49d830b3656e45aa1035ec1",
+        "95f24fca83dadeb7877cba9222c8687c",
+        "ec0d13238bd40d2471f5a610a3a74aaf",
+        "7182f80767fda52f46c28a6bc0f48151",
+        "c32751dd9b8dbbf91ea88bbcd68d54c0",
+        "0baa0cb45787517346e1721e5ae63971",
+        "b9486490f9ced03fcf69fc74e57c5bde",
+        "2664f068dd9e0823fd569fd89bb0eba5",
+        "d0eb6ed033e02900a8c6180d1ab034e4",
+        "f08eea5984ceb97a039d12252e13284b",
+        "d609951920e7a110c63c32b6123d269e",
+        "7b135300a9a0f39aa01816dc99947d1a",
+        "72885f21ff195aee83eb2f717c52ef09",
+        "24de8d1851e0d28876dff0408255cbdc",
+        "cca7d49dc6895900651203456f8be153",
+        "c004c0500d241cad61d7d5b32aba931a"
+      ],
+      "approved": true,
+      "createdAt": "2024-07-24T04:09:53.531Z",
+      "slug": "beam-ai",
+      "__v": 1,
+      "featured": false
+    },
+    {
+      "_id": "66a2aacb395047910b126578",
+      "name": "Composio",
+      "createdBy": "Composio",
+      "website": "https://composio.dev",
+      "email": "contact@composio.dev",
+      "access": "Open Source",
+      "pricingModel": "Freemium",
+      "category": "AI Agents Platform",
+      "industry": "Technology",
+      "shortDescription": "A platform for integrating AI agents with over 150 external tools to enhance functionality.",
+      "longDescription": "Composio is a toolset designed to empower AI agents with seamless interactions with software applications and system tools.\r\n\r\nFeaturing built-in authentication management and support for actions and triggers, Composio enables users to integrate external tools swiftly, helping them go live within hours.\r\n\r\nComposio enhances AI agents' capabilities, enabling them to execute code, interact with local systems, and integrate with over 200 external tools, thus simplifying complex integration tasks and letting users focus on their primary objectives.\r\n\r\nIt also supports custom tool development, allowing developers to build tailored solutions.",
+      "keyFeatures": [
+        "In-built auth management, Quick agentic integrations, SOC II Compliant, Support for Custom Tools, Free forever plan"
+      ],
+      "useCases": [
+        "Auth management, Agent Creation, AI Integrations, AI Development"
+      ],
+      "tags": "AI, Coding, Productivity, Developer Tools",
+      "logo": "https://storage.googleapis.com/aiagents_1/agent-logos/1721936587125-62d6611595bc8d41.png",
+      "logoFileName": "1721936587125-62d6611595bc8d41.png",
+      "image": "https://storage.googleapis.com/aiagents_1/agent-images/1721936587479-1a51b8d12cc12ab6.png",
+      "imageFileName": "1721936587479-1a51b8d12cc12ab6.png",
+      "video": "https://www.youtube.com/watch?v=88cJuwbs20I",
+      "upvotes": 11,
+      "upvoters": [
+        "c0f1b6fa5ff80ddea820eb08960b36a2",
+        "459198112cd7fd670a52fee5f124e67f",
+        "293be37b7810475da867c8d72ca3c42f",
+        "94c56037ed5c9ddb9b6c880f98fabf28",
+        "02971dd6062cb8d8e7b75d2d4e4366bd",
+        "7c12f634b49d830b3656e45aa1035ec1",
+        "85b913b758c9dd790c51d7d8f7b8bc44",
+        "bb5a66e9e3e0cf283e90080cb2c341cd",
+        "cdfc42d459a843afe75af52cc7fb20b0",
+        "362a05086ac81bff3382fee92de0aac1",
+        "ac260f02c97880dabe96ff31f975fceb"
+      ],
+      "approved": true,
+      "createdAt": "2024-07-25T19:43:07.710Z",
+      "slug": "composio",
+      "__v": 10,
+      "featured": false
+    },
+    {
+      "_id": "66a3122a21c566f91b809f2d",
+      "name": "OpenAGI",
+      "createdBy": "AGI Research",
+      "website": "https://github.com/agiresearch/OpenAGI",
+      "access": "Open Source",
+      "pricingModel": "Free",
+      "category": "AI Agents Platform",
+      "industry": "Technology",
+      "shortDescription": "Open-source platform for developing and researching artificial general intelligence",
+      "longDescription": "OpenAGI is an open-source research and development platform designed to advance artificial general intelligence (AGI). It integrates large language models (LLMs) with domain-specific expert models to solve complex, multi-step tasks. By using a combination of benchmark and open-ended tasks, along with a reinforcement learning feedback mechanism, OpenAGI aims to create self-improving AI systems. The platform encourages collaboration and experimentation among developers and researchers to further AGI progress.",
+      "keyFeatures": [
+        "Open-source platform,",
+        "integration of LLMs with expert models,",
+        "reinforcement learning feedback,",
+        "support for complex task-solving,",
+        "extensible and modular architecture."
+      ],
+      "useCases": [
+        "Autonomous vehicles,",
+        "healthcare data analysis,",
+        "personalized treatment plans,",
+        "natural language processing,",
+        "creative content generation"
+      ],
+      "tags": "AGI, open-source, LLM, reinforcement learning, complex tasks.",
+      "logo": "https://storage.googleapis.com/aiagents_1/agent-logos/1721963050100-2079cea026729ff2.png",
+      "logoFileName": "1721963050100-2079cea026729ff2.png",
+      "image": "https://storage.googleapis.com/aiagents_1/agent-images/1721963050308-2f6d90a980d40b2e.png",
+      "imageFileName": "1721963050308-2f6d90a980d40b2e.png",
+      "video": "https://www.youtube.com/watch?v=7RaXPPXi0-Y",
+      "upvotes": 2,
+      "upvoters": [
+        "c0f1b6fa5ff80ddea820eb08960b36a2",
+        "94c56037ed5c9ddb9b6c880f98fabf28"
+      ],
+      "approved": true,
+      "createdAt": "2024-07-26T03:04:10.529Z",
+      "slug": "openagi",
+      "__v": 2,
+      "featured": false
+    }
+  ]
+
+  
+  

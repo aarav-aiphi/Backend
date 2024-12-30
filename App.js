@@ -11,7 +11,8 @@ import fileUpload from 'express-fileupload';
 import session from 'express-session';
 import passport from 'passport';
 import './config/passport.js';
-import adminRoutes from './routes/adminRoutes.js';
+import adminRoutes from './routes/newAdminRoutes.js';
+import superadminroutes from './routes/superadminRoutes.js'
 import useCasesRoutes from './routes/useCasesRoutes.js';
 import newsletterRoutes from './routes/newsletter.js';
 import newsRoutes from './routes/news.js';
@@ -155,6 +156,7 @@ app.get('/sitemap.xml', async (req, res) => {
 app.use('/api/agents', agentRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/superadmin',superadminroutes);
 app.use('/api/usecase', useCasesRoutes);
 app.use('/api/news', newsRoutes);
 app.use('/api/newsletter', newsletterRoutes);
